@@ -4,7 +4,6 @@ import {
   MikroOrmModuleOptions,
   MikroOrmOptionsFactory,
 } from '@mikro-orm/nestjs';
-import { Example } from '../../modules/example/schemas/example.schema';
 
 @Injectable()
 export class MikroOrmConfigService implements MikroOrmOptionsFactory {
@@ -16,7 +15,8 @@ export class MikroOrmConfigService implements MikroOrmOptionsFactory {
     return {
       type: 'mongo',
       clientUrl: this.configService.get<string>('MONGO_URI'),
-      entities: [Example],
+      entities: [this.configService.get<string>('ENTITIES_PATH')],
+      entitiesTs: [this.configService.get<string>('ENTITIES_TS_PATH')],
       debug: this.configService.get<string>('LOG_LEVEL') === 'debug',
       logger: (message) => this.logger.debug(message),
     };
