@@ -6,6 +6,11 @@
             "use": "@vercel/node"
         }
     ],
+    "env": {
+        "MONGO_URI": "@mongo_uri",
+        "TS_ENTITIES": "@ts_entities",
+        "ENTITES": "@entities"
+    },
     "routes": [
         {
             "src": "/(.*)",
