@@ -14,9 +14,6 @@ async function bootstrap() {
 }
 
 function buildSwaggerConfig() {
-  return new DocumentBuilder()
-    .setTitle('Vercel API')
-    .addSecurity('token', { type: 'apiKey', name: 'token', in: 'header' })
-    .build();
+  return new DocumentBuilder().setTitle('Vercel API').build();
 }
 bootstrap();

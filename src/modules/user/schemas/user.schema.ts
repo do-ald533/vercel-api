@@ -1,6 +1,7 @@
-import { Entity, Filter, Property } from '@mikro-orm/core';
+import { Embedded, Entity, Filter, Property } from '@mikro-orm/core';
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseSchema } from '../../../shared/schemas/base.schema';
+import { Address } from './address.schema';
 
 @Filter({
   name: 'active',
@@ -8,7 +9,7 @@ import { BaseSchema } from '../../../shared/schemas/base.schema';
   args: false,
   default: true,
 })
-@Entity()
+@Entity({ collection: 'user' })
 export class User extends BaseSchema {
   @ApiProperty()
   @Property()
@@ -25,4 +26,8 @@ export class User extends BaseSchema {
   @ApiProperty()
   @Property()
   age?: number;
+
+  @ApiProperty({ type: Address })
+  @Embedded({ entity: () => Address })
+  address!: Address;
 }

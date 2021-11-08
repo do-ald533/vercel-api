@@ -8018,6 +8018,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swagger-ui-dist@npm:^3.18.1":
+  version: 3.52.5
+  resolution: "swagger-ui-dist@npm:3.52.5"
+  checksum: a8bd28bf475c67ad8445a2bb864c4130415d001caeb5db54f0a561785ac9f7df77230a7634520e9c10f25b568035a8f924ecc059945d4caed00a3f2a39ca243c
+  languageName: node
+  linkType: hard
+
+"swagger-ui-express@npm:^4.1.6":
+  version: 4.1.6
+  resolution: "swagger-ui-express@npm:4.1.6"
+  dependencies:
+    swagger-ui-dist: ^3.18.1
+  peerDependencies:
+    express: ">=4.0.0"
+  checksum: aff79812940fa1e693eb9a9f2abd7f6e38d62a9d60b9a70fc90749e572d997d70f4cc110b791774f09c5197f8da32941bec25da780ab4c6d58593df23628d735
+  languageName: node
+  linkType: hard
+
 "symbol-observable@npm:4.0.0":
   version: 4.0.0
   resolution: "symbol-observable@npm:4.0.0"
@@ -8733,6 +8751,7 @@ __metadata:
     rxjs: ^7.2.0
     source-map-support: ^0.5.20
     supertest: ^6.1.3
+    swagger-ui-express: ^4.1.6
     ts-jest: ^27.0.3
     ts-loader: ^9.2.3
     ts-node: ^10.0.0
